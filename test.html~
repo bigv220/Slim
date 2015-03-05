@@ -1,0 +1,29 @@
+<head>
+<script src="jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$.ajax({
+                type: "POST",
+                url: "http://api.echengchina.com/post",
+                crossDomain: true,
+                beforeSend: function() {
+                    //$.mobile.loading('show')
+                },
+                complete: function() {
+                    //$.mobile.loading('hide')
+                },
+                data: {ccid1:207, ccid17:"5000-15000", limit:"10",page:0},
+                dataType: 'json',
+                success: function(response) {
+                    //console.error(JSON.stringify(response));
+                    alert(response);
+                },
+                error: function() {
+                    //console.error("error");
+                    alert('Not working!');
+                }
+            });
+});
+</script>
+</head><body>test</body>
+
